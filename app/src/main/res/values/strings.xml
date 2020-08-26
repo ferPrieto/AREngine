@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Template</string>
+    <string name="header_title">This is a header title</string>
+</resources>
