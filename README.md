@@ -2,7 +2,7 @@
 
 # AREngine using Huawei SDK
 
-This is the version that fits into <b>Mac OS</b>.
+This is the version that fits into <b>Windows</b>.
 
 ## Modules :department_store:
 
