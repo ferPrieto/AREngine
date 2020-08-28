@@ -2,6 +2,8 @@
 
 # AREngine using Huawei SDK
 
+This is the version that fits into <b>Mac OS</b>.
+
 ## Modules :department_store:
 
 * **app** - The application module with access to **all the application**
