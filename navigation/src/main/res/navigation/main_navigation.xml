@@ -2,10 +2,48 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/dashboardFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="prieto.fernando.template.ui.FirstFragment" />
+        android:id="@+id/dashboardFragment"
+        android:name="prieto.fernando.template.ui.fragment.DashboardFragment"
+        android:label="dashboardFragment">
+        <action
+            android:id="@+id/action_dashboardFragment_to_bodyFragment"
+            app:destination="@id/bodyFragment"
+            app:popUpTo="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_faceFragment"
+            app:destination="@id/faceFragment"
+            app:popUpTo="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_handFragment"
+            app:destination="@id/handFragment"
+            app:popUpTo="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_worldFragment"
+            app:destination="@id/worldFragment"
+            app:popUpTo="@id/dashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bodyFragment"
+        android:name="prieto.fernando.template.ui.fragment.BodyFragment"
+        android:label="bodyFragment" />
+
+    <fragment
+        android:id="@+id/faceFragment"
+        android:name="prieto.fernando.template.ui.fragment.FaceFragment"
+        android:label="faceFragment" />
+
+    <fragment
+        android:id="@+id/handFragment"
+        android:name="prieto.fernando.template.ui.fragment.HandFragment"
+        android:label="handFragment" />
+
+    <fragment
+        android:id="@+id/worldFragment"
+        android:name="prieto.fernando.template.ui.fragment.WorldFragment"
+        android:label="worldFragment" />
 
 </navigation>

@@ -14,7 +14,7 @@ object AndroidSettings {
 
 object Versions {
     const val appCompat = "1.1.0"
-    const val navigation = "2.1.0"
+    const val navigation = "2.3.0"
     const val constraintLayout = "1.1.3"
     const val legacySupportV4 = "1.0.0"
     const val lifecycleLivedataKtx = "2.2.0-rc01"
@@ -40,6 +40,8 @@ object BuildDependencies {
         "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val hiltGradlePlugin =
         "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    const val safeArgsPlugin =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}"
 }
 
 object Dependencies {

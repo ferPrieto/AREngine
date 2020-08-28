@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Template</string>
-    <string name="header_title">This is a header title</string>
+    <string name="dashboard_title">Welcome to the AR Engine Sample</string>
+    <string name="dashboard_button_body">Body Sample</string>
+    <string name="dashboard_button_face">Face Sample</string>
+    <string name="dashboard_button_hand">Hand Sample</string>
+    <string name="dashboard_button_world">World Sample</string>
+
+    <string name="body_title">This is the body sample</string>
+    <string name="face_title">This is the face sample</string>
+    <string name="hand_title">This is the hand sample</string>
+    <string name="world_title">This is the world sample</string>
 </resources>

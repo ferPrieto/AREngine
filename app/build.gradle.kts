@@ -4,6 +4,7 @@ import prieto.fernando.android.plugin.androidPluginId
 plugins {
     id("com.android.application")
     id("prieto.fernando.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 androidPlugin {
@@ -25,6 +26,9 @@ android {
                 file("proguard-rules.pro")
             )
         }
+    }
+    sourceSets {
+        getByName("main").java.srcDirs("build/generated/source/navigation-args")
     }
 }
 

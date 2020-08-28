@@ -8,10 +8,10 @@ import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
 import prieto.fernando.core.di.FragmentKey
 import prieto.fernando.core.di.ViewModelKey
-import prieto.fernando.presentation.FirstViewModel
-import prieto.fernando.presentation.FirstViewModelImpl
-import prieto.fernando.template.ui.FirstFragment
-import prieto.fernando.template.ui.MainActivity
+import prieto.fernando.presentation.DashboardViewModel
+import prieto.fernando.presentation.DashboardViewModelImpl
+import prieto.fernando.template.ui.*
+import prieto.fernando.template.ui.fragment.*
 
 @Module
 internal abstract class MainActivityModule {
@@ -21,11 +21,31 @@ internal abstract class MainActivityModule {
 
     @Binds
     @IntoMap
-    @FragmentKey(FirstFragment::class)
-    abstract fun bindFirstFragment(firstFragment: FirstFragment): Fragment
+    @FragmentKey(DashboardFragment::class)
+    abstract fun bindDashboardFragment(dashboardFragment: DashboardFragment): Fragment
 
     @Binds
     @IntoMap
-    @ViewModelKey(FirstViewModel::class)
-    abstract fun bindFirstViewModelImpl(viewModel: FirstViewModelImpl): ViewModel
+    @FragmentKey(BodyFragment::class)
+    abstract fun bindBodyFragment(bodyFragment: BodyFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(FaceFragment::class)
+    abstract fun bindFaceFragment(faceFragment: FaceFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(HandFragment::class)
+    abstract fun bindHandFragment(handFragment: HandFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(WorldFragment::class)
+    abstract fun bindWorldFragment(worldFragment: WorldFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DashboardViewModel::class)
+    abstract fun bindDashboardViewModelImpl(viewModel: DashboardViewModelImpl): ViewModel
 }

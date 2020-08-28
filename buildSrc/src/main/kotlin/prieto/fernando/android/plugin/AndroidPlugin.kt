@@ -63,6 +63,7 @@ open class AndroidPlugin : Plugin<Project> {
 
             minSdkVersion(AndroidSettings.minSdk)
             targetSdkVersion(AndroidSettings.targetSdk)
+            //ndk.abiFilter("armeabi-v7a")
 
             testInstrumentationRunner = AndroidSettings.testInstrumentationRunner
         }

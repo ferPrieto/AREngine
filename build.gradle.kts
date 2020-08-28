@@ -8,7 +8,8 @@ buildscript {
         classpath(BuildDependencies.androidGradle)
         classpath(BuildDependencies.kotlinGradlePlugin)
         classpath(BuildDependencies.hiltGradlePlugin)
-        "classpath"("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+        classpath(BuildDependencies.safeArgsPlugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
