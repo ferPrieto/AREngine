@@ -5,5 +5,6 @@ include(
     ":app",
     ":core",
     ":navigation",
-    ":presentation"
+    ":presentation",
+    ":arengine-common"
 )

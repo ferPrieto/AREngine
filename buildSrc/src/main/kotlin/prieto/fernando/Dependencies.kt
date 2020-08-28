@@ -2,6 +2,7 @@ object ProjectModules {
     const val core = ":core"
     const val navigation = ":navigation"
     const val presentation = ":presentation"
+    const val arEngineCommon = ":arengine-common"
 }
 
 object AndroidSettings {
