@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.huawei.arengine.demos.java.world.WorldActivity">
+    tools:context=".ui.activity.MainActivity">
 
     <android.opengl.GLSurfaceView
-        android:id="@+id/surfaceview"
+        android:id="@+id/surface_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="top" />
 
     <TextView
-        android:id="@+id/wordTextView"
+        android:id="@+id/word_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -22,7 +22,7 @@
         tools:layout_editor_absoluteY="4dp" />
 
     <TextView
-        android:id="@+id/searchingTextView"
+        android:id="@+id/searching_text_view"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:layout_alignParentStart="true"

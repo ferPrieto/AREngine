@@ -5,7 +5,7 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import prieto.fernando.core.di.FragmentBindingModule
 import prieto.fernando.core.di.ViewModelBindingModule
-import prieto.fernando.template.TemplateApp
+import prieto.fernando.template.ArEngineApp
 import javax.inject.Singleton
 
 @Component(
@@ -18,4 +18,4 @@ import javax.inject.Singleton
     ]
 )
 @Singleton
-interface AppComponent : AndroidInjector<TemplateApp>
+interface AppComponent : AndroidInjector<ArEngineApp>

@@ -84,7 +84,7 @@ public class GestureEvent {
      * @param motionEvent The gesture motion event: DOWN.
      * @return GestureEvent.
      */
-    static GestureEvent createDownEvent(MotionEvent motionEvent) {
+    public static GestureEvent createDownEvent(MotionEvent motionEvent) {
         GestureEvent ret = new GestureEvent();
         ret.type = GESTURE_EVENT_TYPE_DOWN;
         ret.eventFirst = motionEvent;
@@ -97,7 +97,7 @@ public class GestureEvent {
      * @param motionEvent The gesture motion event: SINGLETAPUP.
      * @return GestureEvent(SINGLETAPUP).
      */
-    static GestureEvent createSingleTapUpEvent(MotionEvent motionEvent) {
+    public static GestureEvent createSingleTapUpEvent(MotionEvent motionEvent) {
         GestureEvent ret = new GestureEvent();
         ret.type = GESTURE_EVENT_TYPE_SINGLETAPUP;
         ret.eventFirst = motionEvent;
@@ -113,7 +113,7 @@ public class GestureEvent {
      * @param distanceY The distance along the Y axis that has been scrolled since the last call to onScroll.
      * @return GestureEvent(SCROLL).
      */
-    static GestureEvent createScrollEvent(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+    public static GestureEvent createScrollEvent(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         GestureEvent ret = new GestureEvent();
         ret.type = GESTURE_EVENT_TYPE_SCROLL;
         ret.eventFirst = e1;
