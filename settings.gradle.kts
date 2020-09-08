@@ -1,3 +1,4 @@
+include(":HUAWEI_AR_SDK_v2.10.0")
 rootProject.name = "AREngine"
 rootProject.buildFileName = "build.gradle.kts"
 

@@ -10,10 +10,10 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import prieto.fernando.presentation.DashboardViewModel
 import prieto.fernando.template.R
-import prieto.fernando.template.ui.DashboardFragmentDirections.Companion.actionDashboardFragmentToBodyFragment
-import prieto.fernando.template.ui.DashboardFragmentDirections.Companion.actionDashboardFragmentToFaceFragment
-import prieto.fernando.template.ui.DashboardFragmentDirections.Companion.actionDashboardFragmentToHandFragment
-import prieto.fernando.template.ui.DashboardFragmentDirections.Companion.actionDashboardFragmentToWorldFragment
+import prieto.fernando.template.ui.fragment.DashboardFragmentDirections.Companion.actionDashboardFragmentToBodyFragment
+import prieto.fernando.template.ui.fragment.DashboardFragmentDirections.Companion.actionDashboardFragmentToFaceFragment
+import prieto.fernando.template.ui.fragment.DashboardFragmentDirections.Companion.actionDashboardFragmentToHandFragment
+import prieto.fernando.template.ui.fragment.DashboardFragmentDirections.Companion.actionDashboardFragmentToWorldFragment
 import javax.inject.Inject
 
 

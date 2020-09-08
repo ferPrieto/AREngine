@@ -4,5 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation ("com.huawei.hms:arenginesdk:2.12.0.1")
+    implementation(project(":HUAWEI_AR_SDK_v2.10.0"))
+    implementation("androidx.annotation:annotation:1.1.0")
+    implementation(Dependencies.AndroidX.coreKtx)
 }

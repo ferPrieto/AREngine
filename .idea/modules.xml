@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.iml" group="AREngine" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine_buildSrc.iml" group="AREngine/AREngine_buildSrc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/HUAWEI_AR_SDK_v2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/HUAWEI_AR_SDK_v2.10.0.iml" group="AREngine/HUAWEI_AR_SDK_v2.10.0" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AREngine/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/arengine-common/arengine-common.iml" filepath="$PROJECT_DIR$/.idea/modules/arengine-common/arengine-common.iml" group="AREngine/arengine-common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="AREngine/core" />

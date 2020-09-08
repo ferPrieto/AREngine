@@ -10,7 +10,7 @@ import prieto.fernando.core.di.FragmentKey
 import prieto.fernando.core.di.ViewModelKey
 import prieto.fernando.presentation.DashboardViewModel
 import prieto.fernando.presentation.DashboardViewModelImpl
-import prieto.fernando.template.ui.*
+import prieto.fernando.template.ui.activity.MainActivity
 import prieto.fernando.template.ui.fragment.*
 
 @Module
