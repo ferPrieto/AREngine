@@ -7,20 +7,20 @@
     tools:ignore="MissingDefaultResource">
 
     <android.opengl.GLSurfaceView
-        android:id="@+id/bodySurfaceview"
+        android:id="@+id/body_surface_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="top"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/bodyTextView"
+        android:id="@+id/body_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="@color/red"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="315dp"
-        tools:layout_editor_absoluteY="4dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

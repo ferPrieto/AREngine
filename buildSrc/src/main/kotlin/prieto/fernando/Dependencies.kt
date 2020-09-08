@@ -4,6 +4,7 @@ object ProjectModules {
     const val presentation = ":presentation"
     const val arEngineCommon = ":arengine-common"
     const val rendering = ":rendering"
+    const val arSdk = ":HUAWEI_AR_SDK_v2.10.0"
 }
 
 object AndroidSettings {

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.jraska.livedata:testing-ktx:1.1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e318d110d656c038514f844cc7eb5cc3/jetified-testing-ktx-1.1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e318d110d656c038514f844cc7eb5cc3/jetified-testing-ktx-1.1.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e0c9c7c5a079a57ff1ae06bf2e788f2/jetified-testing-ktx-1.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4e0c9c7c5a079a57ff1ae06bf2e788f2/jetified-testing-ktx-1.1.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -38,6 +38,7 @@ dependencies {
     implementation(project(ProjectModules.presentation))
     implementation(project(ProjectModules.arEngineCommon))
     implementation(project(ProjectModules.rendering))
+    implementation(project(ProjectModules.arSdk))
 
     implementation(Dependencies.AndroidX.fragmentKtx)
     implementation(Dependencies.AndroidX.coreKtx)
