@@ -6,4 +6,13 @@
     <color name="colorAccentSecondary">#2c8a45</color>
     <color name="textColorPrimary">#000000</color>
     <color name="colorBackground">#FFFFFF</color>
+
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#202020</color>
+    <color name="back_black">#404040</color>
+    <color name="green">#1B5E20</color>
+    <color name="dark_blue">#0d47A1</color>
+    <color name="gray">#646464</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -3,6 +3,7 @@ object ProjectModules {
     const val navigation = ":navigation"
     const val presentation = ":presentation"
     const val arEngineCommon = ":arengine-common"
+    const val rendering = ":rendering"
 }
 
 object AndroidSettings {
@@ -32,6 +33,7 @@ object Versions {
     const val kotlin = "1.3.60"
     const val coreTesting = "1.1.1"
     const val hilt = "2.28-alpha"
+    const val javaGlObj = "0.3.0"
 }
 
 object BuildDependencies {
@@ -84,6 +86,11 @@ object Dependencies {
             "com.google.dagger:dagger-compiler:${Versions.dagger}"
         const val daggerAndroidProcessor =
             "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    }
+
+    object Rendering {
+        const val javaGlObject =
+            "de.javagl:obj:${Versions.javaGlObj}"
     }
 }
 

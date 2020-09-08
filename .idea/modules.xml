@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="AREngine/core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/navigation.iml" group="AREngine/navigation" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/presentation/presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/presentation/presentation.iml" group="AREngine/presentation" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rendering/rendering.iml" filepath="$PROJECT_DIR$/.idea/modules/rendering/rendering.iml" group="AREngine/rendering" />
     </modules>
   </component>
 </project>

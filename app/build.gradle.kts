@@ -37,6 +37,7 @@ dependencies {
     implementation(project(ProjectModules.navigation))
     implementation(project(ProjectModules.presentation))
     implementation(project(ProjectModules.arEngineCommon))
+    implementation(project(ProjectModules.rendering))
 
     implementation(Dependencies.AndroidX.fragmentKtx)
     implementation(Dependencies.AndroidX.coreKtx)

@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/presentation" />
+            <option value="$PROJECT_DIR$/rendering" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
