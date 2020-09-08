@@ -6,6 +6,7 @@ navigation/build/
 presentation/build/
 core/build/
 HUAWEI_AR_SDK_v2.10.0/build/
+rendering/build/
 /buildSrc/.gradle/
 
 
