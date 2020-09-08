@@ -1,4 +1,5 @@
 object ProjectModules {
+    const val app = ":app"
     const val core = ":core"
     const val navigation = ":navigation"
     const val presentation = ":presentation"

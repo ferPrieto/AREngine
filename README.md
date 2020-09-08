@@ -4,16 +4,19 @@
 
 This is the version that fits into <b>Mac OS</b>.
 
-## Modules :department_store:
+## Modules
 
 * **app** - The application module with access to **all the application**
 * **buildSrc** - Kotlin module that contains the **Dependencies** class and the **AndroidPlugin** that will simplify the build gradle files in every single module defined.
 * **core** - Android module that contains the Injecting VM Factory and the needed DI basic annotations **(it can't access any other module)**
 * **navigation** - Android Jetpack navigation abstraction (it contains the navigation config file) **cannot access any other module**
 * **presentation** - Android module that contains the UI model and VMs used in the app
+* **arEngineCommon** - Java module that contains the AREngine common classes.
+* **rendering** - Java module that contains the basic classes that manage the render mechanism.
+* **arSdk** - Contains the aar 'HUAWEI_AR_SDK_vX.XX.XX'
 
 
-#  License :oncoming_police_car:
+#  License
 
     Copyright 2020 Fernando Prieto Moyano
 
