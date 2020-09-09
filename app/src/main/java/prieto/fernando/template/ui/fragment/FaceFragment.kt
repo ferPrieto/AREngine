@@ -11,7 +11,6 @@ import android.view.Surface
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.huawei.hiar.ARConfigBase
 import com.huawei.hiar.AREnginesApk
 import com.huawei.hiar.ARFaceTrackingConfig
@@ -19,7 +18,6 @@ import com.huawei.hiar.ARSession
 import com.huawei.hiar.exceptions.*
 import fernando.prieto.arengine_common.ConnectAppMarketActivity
 import fernando.prieto.arengine_common.DisplayRotationManager
-import fernando.prieto.rendering.body3d.BodyRenderManager
 import fernando.prieto.rendering.face.FaceRenderManager
 import prieto.fernando.template.R
 import prieto.fernando.template.ui.camera.CameraHelper
@@ -29,11 +27,8 @@ import kotlinx.android.synthetic.main.fragment_face.face_text_view as faceTexVie
 
 private const val TAG = "FaceFragment"
 
-class FaceFragment @Inject constructor(
-    viewModelFactory: ViewModelProvider.Factory
-) : Fragment(R.layout.fragment_face) {
+class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
 
-    private lateinit var bodyRenderManager: BodyRenderManager
     private lateinit var displayRotationManager: DisplayRotationManager
     private lateinit var mFaceRenderManager: FaceRenderManager
     private var mPreViewSurface: Surface? = null
@@ -65,7 +60,7 @@ class FaceFragment @Inject constructor(
         // number of bits of the color buffer and the number of depth bits.
         faceSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0)
 
-        mFaceRenderManager = FaceRenderManager(requireContext(), activity)
+        mFaceRenderManager = FaceRenderManager(requireContext(), requireActivity())
         mFaceRenderManager.setDisplayRotationManage(displayRotationManager)
         mFaceRenderManager.setTextView(faceTexView)
 
@@ -79,20 +74,18 @@ class FaceFragment @Inject constructor(
      * If not, redirect the user to HUAWEI AppGallery for installation.
      */
     private fun arEngineAbilityCheck(): Boolean {
-        val isInstallArEngineApk = AREnginesApk.isAREngineApkReady(activity?.applicationContext)
+        val isInstallArEngineApk =
+            AREnginesApk.isAREngineApkReady(requireActivity().applicationContext)
         if (!isInstallArEngineApk && isRemindInstall) {
             Toast.makeText(requireContext(), "Please agree to install.", Toast.LENGTH_LONG).show()
-            activity?.finish()
+            requireActivity().finish()
         }
-        Log.d(
-            TAG,
-            "Is Install AR Engine Apk: $isInstallArEngineApk"
-        )
+        Log.d(TAG, "Is Install AR Engine Apk: $isInstallArEngineApk")
         if (!isInstallArEngineApk) {
             startActivity(Intent(requireContext(), ConnectAppMarketActivity::class.java))
             isRemindInstall = true
         }
-        return AREnginesApk.isAREngineApkReady(activity?.applicationContext)
+        return AREnginesApk.isAREngineApkReady(requireActivity().applicationContext)
     }
 
     override fun onResume() {
@@ -105,7 +98,7 @@ class FaceFragment @Inject constructor(
         if (arSession == null) {
             try {
                 if (!arEngineAbilityCheck()) {
-                    activity?.finish()
+                    requireActivity().finish()
                     return
                 }
                 arSession = ARSession(requireContext())
@@ -119,7 +112,7 @@ class FaceFragment @Inject constructor(
                 exception = capturedException
                 setMessageWhenError(capturedException)
             }
-            if (message != null) {
+            message?.let {
                 stopArSession(exception!!)
                 return
             }
@@ -198,7 +191,7 @@ class FaceFragment @Inject constructor(
                 val showMessage = "Open camera filed!"
                 Log.e(TAG, showMessage)
                 Toast.makeText(requireContext(), showMessage, Toast.LENGTH_LONG).show()
-                activity?.finish()
+                requireActivity().finish()
             }
         }
     }

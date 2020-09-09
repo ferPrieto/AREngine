@@ -44,7 +44,7 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
         // number of bits of the color buffer and the number of depth bits.
         bodySurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0)
 
-        bodyRenderManager = BodyRenderManager(activity)
+        bodyRenderManager = BodyRenderManager(requireActivity())
         bodyRenderManager.setDisplayRotationManage(displayRotationManager)
         bodyRenderManager.setTextView(bodyTexView)
 
@@ -58,23 +58,24 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
      * If not, redirect the user to HUAWEI AppGallery for installation.
      */
     private fun arEngineAbilityCheck(): Boolean {
-        val isInstallArEngineApk = AREnginesApk.isAREngineApkReady(activity?.applicationContext)
+        val isInstallArEngineApk =
+            AREnginesApk.isAREngineApkReady(requireActivity().applicationContext)
         if (!isInstallArEngineApk && isRemindInstall) {
-            Toast.makeText(context, "Please agree to install.", Toast.LENGTH_LONG).show()
-            activity?.finish()
+            Toast.makeText(requireContext(), "Please agree to install.", Toast.LENGTH_LONG).show()
+            requireActivity().finish()
         }
         Log.d(TAG, "Is Install AR Engine Apk: $isInstallArEngineApk")
         if (!isInstallArEngineApk) {
-            startActivity(Intent(context, ConnectAppMarketActivity::class.java))
+            startActivity(Intent(requireContext(), ConnectAppMarketActivity::class.java))
             isRemindInstall = true
         }
-        return AREnginesApk.isAREngineApkReady(activity?.applicationContext)
+        return AREnginesApk.isAREngineApkReady(requireActivity().applicationContext)
     }
 
     private fun setMessageWhenError(catchException: Exception) {
         when (catchException) {
             is ARUnavailableServiceNotInstalledException -> {
-                startActivity(Intent(context, ConnectAppMarketActivity::class.java))
+                startActivity(Intent(requireContext(), ConnectAppMarketActivity::class.java))
             }
             is ARUnavailableServiceApkTooOldException -> {
                 message = "Please update HuaweiARService.apk"
@@ -99,10 +100,10 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
         if (arSession == null) {
             try {
                 if (!arEngineAbilityCheck()) {
-                    activity?.finish()
+                    requireActivity().finish()
                     return
                 }
-                arSession = ARSession(context)
+                arSession = ARSession(requireContext())
                 val config = ARBodyTrackingConfig(arSession)
                 config.enableItem = (ARConfigBase.ENABLE_DEPTH or ARConfigBase.ENABLE_MASK.toLong()
                     .toInt()).toLong()
@@ -113,10 +114,10 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
                 setMessageWhenError(capturedException)
             }
             message?.let {
-                Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
                 Log.e(TAG, "Creating session", exception)
-                if (arSession != null) {
-                    arSession?.stop()
+                arSession?.let { session ->
+                    session.stop()
                     arSession = null
                 }
                 return
@@ -137,10 +138,10 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
     override fun onPause() {
         Log.i(TAG, "onPause start.")
         super.onPause()
-        if (arSession != null) {
+        arSession?.let {
             displayRotationManager.unregisterDisplayListener()
             bodySurfaceView.onPause()
-            arSession?.pause()
+            it.pause()
         }
         Log.i(TAG, "onPause end.")
     }
@@ -148,8 +149,8 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
     override fun onDestroy() {
         Log.i(TAG, "onDestroy start.")
         super.onDestroy()
-        arSession?.let { session ->
-            session.stop()
+        arSession?.let {
+            it.stop()
             arSession = null
         }
         Log.i(TAG, "onDestroy end.")

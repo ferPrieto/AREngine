@@ -68,6 +68,7 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycleLivedataKtx}"
         const val archComponents =
             "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleLivedataKtx}"
+        const val annotation = "androidx.annotation:annotation:${Versions.appCompat}"
 
         object Navigation {
             const val fragmentKtx =

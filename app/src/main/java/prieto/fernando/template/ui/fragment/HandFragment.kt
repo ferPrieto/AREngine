@@ -23,9 +23,7 @@ import kotlinx.android.synthetic.main.fragment_hand.hand_text_view as handTexVie
 
 private const val TAG = "HandFragment"
 
-class HandFragment @Inject constructor(
-    viewModelFactory: ViewModelProvider.Factory
-) : Fragment(R.layout.fragment_hand) {
+class HandFragment @Inject constructor() : Fragment(R.layout.fragment_hand) {
 
     private lateinit var handRenderManager: HandRenderManager
     private lateinit var displayRotationManager: DisplayRotationManager
@@ -48,7 +46,7 @@ class HandFragment @Inject constructor(
         // number of bits of the color buffer and the number of depth bits.
         handSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0)
 
-        handRenderManager = HandRenderManager(activity)
+        handRenderManager = HandRenderManager(requireActivity())
         handRenderManager.setDisplayRotationManage(displayRotationManager)
         handRenderManager.setTextView(handTexView)
 
