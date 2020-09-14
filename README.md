@@ -1,6 +1,6 @@
 [![Platform](https://img.shields.io/badge/platform-android-brightgreen)](https://developer.android.com/reference)
 
-# AREngine
+<img src="art/AR-MacOs.jpg"/>
 
 This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>, re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
 
