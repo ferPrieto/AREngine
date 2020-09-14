@@ -1,8 +1,14 @@
 [![Platform](https://img.shields.io/badge/platform-android-brightgreen)](https://developer.android.com/reference)
 
-# AREngine using Huawei SDK
+# AREngine
 
-This is the version that fits into <b>Mac OS</b>.
+This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>, re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
+
+## Getting Started
+
+1. Clone either this repository or the <b>Windows OS</b>, in order to get the main structure and samples.
+2. Click on ```Sync Project with Gradle Files``` and ```Make Project``` buttons on Android Studio, to get the dependencies and project ready.
+3. Use the different examples in the fragment package (<b>app</b> module) as a guide.
 
 ## Modules
 
