@@ -20,7 +20,7 @@ import fernando.prieto.arengine_common.ConnectAppMarketActivity
 import fernando.prieto.arengine_common.DisplayRotationManager
 import fernando.prieto.rendering.face.FaceRenderManager
 import prieto.fernando.template.R
-import prieto.fernando.template.ui.camera.CameraHelper
+import prieto.fernando.template.ui.camera.CameraSessionProvider
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_face.face_surface_view as faceSurfaceView
 import kotlinx.android.synthetic.main.fragment_face.face_text_view as faceTexView
@@ -30,15 +30,14 @@ private const val TAG = "FaceFragment"
 class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
 
     private lateinit var displayRotationManager: DisplayRotationManager
-    private lateinit var mFaceRenderManager: FaceRenderManager
-    private var mPreViewSurface: Surface? = null
-    private var mVgaSurface: Surface? = null
-    private var mMetaDataSurface: Surface? = null
-    private var mDepthSurface: Surface? = null
+    private lateinit var faceRenderManager: FaceRenderManager
+    private var cameraSessionProvider: CameraSessionProvider? = null
+    private var preViewSurface: Surface? = null
+    private var vgaSurface: Surface? = null
+    private var metaDataSurface: Surface? = null
+    private var depthSurface: Surface? = null
     private var arConfig: ARConfigBase? = null
     private val isOpenCameraOutside = false
-    private var camera: CameraHelper? = null
-
     private var arSession: ARSession? = null
     private var message: String? = null
     private var isRemindInstall = false
@@ -60,11 +59,11 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
         // number of bits of the color buffer and the number of depth bits.
         faceSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0)
 
-        mFaceRenderManager = FaceRenderManager(requireContext(), requireActivity())
-        mFaceRenderManager.setDisplayRotationManage(displayRotationManager)
-        mFaceRenderManager.setTextView(faceTexView)
+        faceRenderManager = FaceRenderManager(requireContext(), requireActivity())
+        faceRenderManager.setDisplayRotationManage(displayRotationManager)
+        faceRenderManager.setTextView(faceTexView)
 
-        faceSurfaceView.setRenderer(mFaceRenderManager)
+        faceSurfaceView.setRenderer(faceRenderManager)
         faceSurfaceView.renderMode = GLSurfaceView.RENDERMODE_CONTINUOUSLY
         arEngineAbilityCheck()
     }
@@ -131,9 +130,9 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
         }
         displayRotationManager.registerDisplayListener()
         setCamera()
-        mFaceRenderManager.setArSession(arSession)
-        mFaceRenderManager.setOpenCameraOutsideFlag(isOpenCameraOutside)
-        mFaceRenderManager.setTextureId(textureId)
+        faceRenderManager.setArSession(arSession)
+        faceRenderManager.setOpenCameraOutsideFlag(isOpenCameraOutside)
+        faceRenderManager.setTextureId(textureId)
         faceSurfaceView.onResume()
     }
 
@@ -163,11 +162,11 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
     }
 
     private fun setCamera() {
-        if (isOpenCameraOutside && camera == null) {
+        if (isOpenCameraOutside && cameraSessionProvider == null) {
             Log.i(TAG, "new Camera")
             val dm = DisplayMetrics()
-            camera = CameraHelper(activity)
-            camera?.setupCamera(dm.widthPixels, dm.heightPixels)
+            cameraSessionProvider = CameraSessionProvider(activity)
+            cameraSessionProvider?.setupCamera(dm.widthPixels, dm.heightPixels)
         }
 
         // Check whether setCamera is called for the first time.
@@ -183,11 +182,11 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
                 initSurface()
             }
             val surfaceTexture = SurfaceTexture(textureId)
-            camera?.setPreviewTexture(surfaceTexture)
-            camera?.setPreViewSurface(mPreViewSurface)
-            camera?.setVgaSurface(mVgaSurface)
-            camera?.setDepthSurface(mDepthSurface)
-            if (camera?.openCamera() == true) {
+            cameraSessionProvider?.setPreviewTexture(surfaceTexture)
+            cameraSessionProvider?.setPreViewSurface(preViewSurface)
+            cameraSessionProvider?.setVgaSurface(vgaSurface)
+            cameraSessionProvider?.setDepthSurface(depthSurface)
+            if (cameraSessionProvider?.openCamera() == true) {
                 val showMessage = "Open camera filed!"
                 Log.e(TAG, showMessage)
                 Toast.makeText(requireContext(), showMessage, Toast.LENGTH_LONG).show()
@@ -206,16 +205,16 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
             val surface = surfaceList?.get(i)
             when {
                 ARConfigBase.SurfaceType.PREVIEW == type -> {
-                    mPreViewSurface = surface
+                    preViewSurface = surface
                 }
                 ARConfigBase.SurfaceType.VGA == type -> {
-                    mVgaSurface = surface
+                    vgaSurface = surface
                 }
                 ARConfigBase.SurfaceType.METADATA == type -> {
-                    mMetaDataSurface = surface
+                    metaDataSurface = surface
                 }
                 ARConfigBase.SurfaceType.DEPTH == type -> {
-                    mDepthSurface = surface
+                    depthSurface = surface
                 }
                 else -> {
                     Log.i(TAG, "Unknown type.")
@@ -229,10 +228,10 @@ class FaceFragment @Inject constructor() : Fragment(R.layout.fragment_face) {
         Log.i(TAG, "onPause start.")
         super.onPause()
         if (isOpenCameraOutside) {
-            camera?.let {
-                it.closeCamera()
-                it.stopCameraThread()
-                camera = null
+            cameraSessionProvider.let {
+                it?.closeCamera()
+                it?.stopCameraThread()
+                cameraSessionProvider = null
             }
         }
 
