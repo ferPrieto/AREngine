@@ -19,7 +19,7 @@ import fernando.prieto.arengine_common.ConnectAppMarketActivity
 import fernando.prieto.arengine_common.DisplayRotationManager
 import fernando.prieto.rendering.world.GestureEvent
 import prieto.fernando.template.R
-import prieto.fernando.template.ui.renderer.WorldRenderManager
+import prieto.fernando.template.ui.renderer.WorldRenderer
 import java.util.concurrent.ArrayBlockingQueue
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_world.plane_ceiling as planeCeilingTextView
@@ -44,7 +44,7 @@ class WorldFragment @Inject constructor() : Fragment(R.layout.fragment_world) {
     private lateinit var displayRotationManager: DisplayRotationManager
     private lateinit var gestureDetector: GestureDetector
 
-    private var worldRenderManager: WorldRenderManager? = null
+    private var worldRenderer: WorldRenderer? = null
     private var arSession: ARSession? = null
     private var message: String? = null
     private var isRemindInstall = false
@@ -61,13 +61,16 @@ class WorldFragment @Inject constructor() : Fragment(R.layout.fragment_world) {
         // bits of the color buffer and the number of depth bits.
         worldSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0)
 
-        worldRenderManager = WorldRenderManager(requireActivity(), requireContext())
-        worldRenderManager?.setDisplayRotationManage(displayRotationManager)
-        worldRenderManager?.setQueuedSingleTaps(queuedSingleTaps)
+        worldRenderer = WorldRenderer(
+            requireActivity(),
+            requireContext()
+        )
+        worldRenderer?.setDisplayRotationManage(displayRotationManager)
+        worldRenderer?.setQueuedSingleTaps(queuedSingleTaps)
 
-        worldSurfaceView.setRenderer(worldRenderManager)
+        worldSurfaceView.setRenderer(worldRenderer)
         worldSurfaceView.renderMode = GLSurfaceView.RENDERMODE_CONTINUOUSLY
-        worldRenderManager?.setTextViews(
+        worldRenderer?.setTextViews(
             worldTextView,
             searchingTextView,
             planeOtherTextView,
@@ -132,7 +135,7 @@ class WorldFragment @Inject constructor() : Fragment(R.layout.fragment_world) {
                 config.focusMode = ARConfigBase.FocusMode.AUTO_FOCUS
                 config.semanticMode = ARWorldTrackingConfig.SEMANTIC_PLANE
                 arSession?.configure(config)
-                worldRenderManager!!.setArSession(arSession)
+                worldRenderer!!.setArSession(arSession)
             } catch (capturedException: Exception) {
                 exception = capturedException
                 setMessageWhenError(capturedException)
