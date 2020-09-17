@@ -36,10 +36,10 @@ class DashboardFragment @Inject constructor(
     }
 
     private fun setViewModelObservers() {
-        viewModel.goToBody.observe(this, Observer { navigateToBody() })
-        viewModel.goToFace.observe(this, Observer { navigateToFace() })
-        viewModel.goToHand.observe(this, Observer { navigateToHand() })
-        viewModel.goToWorld.observe(this, Observer { navigateToWorld() })
+        viewModel.goToBody.observe(viewLifecycleOwner, Observer { navigateToBody() })
+        viewModel.goToFace.observe(viewLifecycleOwner, Observer { navigateToFace() })
+        viewModel.goToHand.observe(viewLifecycleOwner, Observer { navigateToHand() })
+        viewModel.goToWorld.observe(viewLifecycleOwner, Observer { navigateToWorld() })
     }
 
     private fun navigateToBody() {

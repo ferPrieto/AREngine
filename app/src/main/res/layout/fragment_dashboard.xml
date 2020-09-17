@@ -7,32 +7,36 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
         android:layout_marginTop="48dp"
-        android:text="@string/dashboard_title"/>
+        android:text="@string/dashboard_title"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
+        android:layout_marginTop="@dimen/grid_normal"
+        android:layout_marginEnd="@dimen/grid_large"
         android:text="@string/dashboard_button_body"
-        android:layout_marginTop="8dp"
         android:textColor="@color/textColorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_face"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
+        android:layout_marginTop="@dimen/grid_normal"
+        android:layout_marginEnd="@dimen/grid_large"
         android:text="@string/dashboard_button_face"
         android:textColor="@color/textColorPrimary"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_body" />
@@ -42,9 +46,11 @@
         android:id="@+id/button_hand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
+        android:layout_marginTop="@dimen/grid_normal"
+        android:layout_marginEnd="@dimen/grid_large"
         android:text="@string/dashboard_button_hand"
         android:textColor="@color/textColorPrimary"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_face" />
@@ -54,9 +60,11 @@
         android:id="@+id/button_world"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_large"
+        android:layout_marginTop="@dimen/grid_normal"
+        android:layout_marginEnd="@dimen/grid_large"
         android:text="@string/dashboard_button_world"
         android:textColor="@color/textColorPrimary"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_hand" />

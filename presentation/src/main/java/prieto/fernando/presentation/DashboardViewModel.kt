@@ -1,7 +1,7 @@
 package prieto.fernando.presentation
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
@@ -18,33 +18,24 @@ abstract class DashboardViewModel : ViewModel() {
 }
 
 class DashboardViewModelImpl @Inject constructor() : DashboardViewModel() {
-    private val _goToBody = MediatorLiveData<Unit>()
-    private val _goToFace = MediatorLiveData<Unit>()
-    private val _goToHand = MediatorLiveData<Unit>()
-    private val _goToWorld = MediatorLiveData<Unit>()
-
-    override val goToBody: LiveData<Unit>
-        get() = _goToBody
-    override val goToFace: LiveData<Unit>
-        get() = _goToFace
-    override val goToHand: LiveData<Unit>
-        get() = _goToHand
-    override val goToWorld: LiveData<Unit>
-        get() = _goToWorld
+    override val goToBody: MutableLiveData<Unit> = MutableLiveData()
+    override val goToFace: MutableLiveData<Unit> = MutableLiveData()
+    override val goToHand: MutableLiveData<Unit> = MutableLiveData()
+    override val goToWorld: MutableLiveData<Unit> = MutableLiveData()
 
     override fun bodyClicked() {
-        _goToBody.postValue(Unit)
+        goToBody.postValue(Unit)
     }
 
     override fun faceClicked() {
-        _goToFace.postValue(Unit)
+        goToFace.postValue(Unit)
     }
 
     override fun handClicked() {
-        _goToHand.postValue(Unit)
+        goToHand.postValue(Unit)
     }
 
     override fun worldClicked() {
-        _goToWorld.postValue(Unit)
+        goToWorld.postValue(Unit)
     }
 }
