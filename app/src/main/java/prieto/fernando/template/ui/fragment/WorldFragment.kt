@@ -135,7 +135,7 @@ class WorldFragment @Inject constructor() : Fragment(R.layout.fragment_world) {
                 config.focusMode = ARConfigBase.FocusMode.AUTO_FOCUS
                 config.semanticMode = ARWorldTrackingConfig.SEMANTIC_PLANE
                 arSession?.configure(config)
-                worldRenderer!!.setArSession(arSession)
+                worldRenderer?.setArSession(arSession)
             } catch (capturedException: Exception) {
                 exception = capturedException
                 setMessageWhenError(capturedException)

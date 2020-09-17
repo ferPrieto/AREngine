@@ -21,6 +21,7 @@ import java.util.*
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 import kotlin.math.max
 import kotlin.math.min
 
@@ -104,7 +105,7 @@ class CameraSessionProvider @Inject constructor(activity: FragmentActivity?) {
                     getOptimalSize(maps.getOutputSizes(SurfaceTexture::class.java), width, height)
                 cameraId = id
                 Log.i(
-                    TAG, "Preview width = " + previewSize!!.width + ", height = "
+                    TAG, "Preview width = " + previewSize?.width + ", height = "
                             + previewSize?.height + ", cameraId = " + cameraId
                 )
                 break
@@ -266,7 +267,7 @@ class CameraSessionProvider @Inject constructor(activity: FragmentActivity?) {
             return
         }
         Log.i(TAG, "StartPreview!")
-        surfaceTexture?.setDefaultBufferSize(previewSize!!.width, previewSize!!.height)
+        surfaceTexture?.setDefaultBufferSize(previewSize?.width ?: 0, previewSize?.height ?: 0)
         if (cameraDevice == null) {
             Log.i(TAG, "cameraDevice is null!")
             return
@@ -292,7 +293,7 @@ class CameraSessionProvider @Inject constructor(activity: FragmentActivity?) {
 
     private fun captureSession(surfaces: List<Surface>) {
         try {
-            cameraDevice!!.createCaptureSession(
+            cameraDevice?.createCaptureSession(
                 surfaces,
                 object : CameraCaptureSession.StateCallback() {
                     override fun onConfigured(session: CameraCaptureSession) {
@@ -317,14 +318,16 @@ class CameraSessionProvider @Inject constructor(activity: FragmentActivity?) {
                                 CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE,
                                 fpsRange
                             )
-                            val captureRequests: MutableList<CaptureRequest> = ArrayList()
-                            captureRequests.add(captureRequestBuilder!!.build())
-                            cameraCaptureSession = session
-                            cameraCaptureSession?.setRepeatingBurst(
-                                captureRequests,
-                                null,
-                                cameraHandler
-                            )
+
+                            captureRequestBuilder?.let {
+                                val captureRequests = mutableListOf(it.build())
+                                cameraCaptureSession = session
+                                cameraCaptureSession?.setRepeatingBurst(
+                                    captureRequests,
+                                    null,
+                                    cameraHandler
+                                )
+                            }
                             cameraOpenCloseLock.release()
                         } catch (e: CameraAccessException) {
                             Log.e(TAG, "CaptureSession onConfigured error")
