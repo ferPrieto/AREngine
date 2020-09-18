@@ -21,6 +21,15 @@ This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>,
 * **rendering** - Java module that contains the basic classes that manage the render mechanism.
 * **arSdk** - Contains the artifact aar 'HUAWEI_AR_SDK_vX.XX.XX' with all of the AR capabilities.
 
+## Samples
+
+<p align="center">
+    <img src="art/World-AR.gif"/>
+    <img src="art/Face-AR.gif"/>
+    <img src="art/Hand-AR.gif"/>
+    <img src="art/Body-AR.gif"/>
+</p>
+
 
 #  License
 
