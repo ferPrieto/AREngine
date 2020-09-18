@@ -23,6 +23,12 @@ This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>,
 
 ## Samples
 
+There are four examples that could be used as start point:
+* World Sample
+* Face Sample
+* Hand Sample
+* Body Sample
+
 <p align="center">
     <img src="art/World-AR.gif"/>
     <img src="art/Face-AR.gif"/>
