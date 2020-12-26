@@ -7,6 +7,5 @@ include(
     ":navigation",
     ":presentation",
     ":arengine-common",
-    ":rendering",
-    ":HUAWEI_AR_SDK_v2.10.0"
+    ":rendering"
 )

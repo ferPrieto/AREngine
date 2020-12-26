@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.iml" group="AREngine" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine-HUAWEI_AR_SDK_v2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine-HUAWEI_AR_SDK_v2.10.0.iml" group="AREngine/HUAWEI_AR_SDK_v2.10.0" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine_buildSrc.iml" group="AREngine/AREngine_buildSrc" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/HUAWEI_AR_SDK_v2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/HUAWEI_AR_SDK_v2.10.0.iml" group="AREngine/HUAWEI_AR_SDK_v2.10.0" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AREngine/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arengine-common/arengine-common.iml" filepath="$PROJECT_DIR$/.idea/modules/arengine-common/arengine-common.iml" group="AREngine/arengine-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="AREngine/core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/navigation.iml" group="AREngine/navigation" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/presentation/presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/presentation/presentation.iml" group="AREngine/presentation" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rendering/rendering.iml" filepath="$PROJECT_DIR$/.idea/modules/rendering/rendering.iml" group="AREngine/rendering" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine.HUAWEI_AR_SDK_v2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine.HUAWEI_AR_SDK_v2.10.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AREngine.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AREngine.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/arengine-common/AREngine.arengine-common.iml" filepath="$PROJECT_DIR$/.idea/modules/arengine-common/AREngine.arengine-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/AREngine.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/AREngine.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/AREngine.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/AREngine.navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/presentation/AREngine.presentation.iml" filepath="$PROJECT_DIR$/.idea/modules/presentation/AREngine.presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rendering/AREngine.rendering.iml" filepath="$PROJECT_DIR$/.idea/modules/rendering/AREngine.rendering.iml" />
     </modules>
   </component>
 </project>

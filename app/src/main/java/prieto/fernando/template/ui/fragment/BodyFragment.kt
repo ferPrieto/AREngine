@@ -103,7 +103,7 @@ class BodyFragment @Inject constructor() : Fragment(R.layout.fragment_body) {
                     requireActivity().finish()
                     return
                 }
-                arSession = ARSession(requireContext())
+                arSession = ARSession(requireActivity().applicationContext)
                 val config = ARBodyTrackingConfig(arSession)
                 config.enableItem = (ARConfigBase.ENABLE_DEPTH or ARConfigBase.ENABLE_MASK.toLong()
                     .toInt()).toLong()

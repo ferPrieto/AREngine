@@ -38,7 +38,6 @@ dependencies {
     implementation(project(ProjectModules.presentation))
     implementation(project(ProjectModules.arEngineCommon))
     implementation(project(ProjectModules.rendering))
-    implementation(project(ProjectModules.arSdk))
 
     implementation(Dependencies.AndroidX.fragmentKtx)
     implementation(Dependencies.AndroidX.coreKtx)
@@ -50,6 +49,8 @@ dependencies {
     implementation(Dependencies.AndroidX.legacySupport)
     implementation(Dependencies.AndroidX.Navigation.fragmentKtx)
     implementation(Dependencies.AndroidX.Navigation.uiKtx)
+
+    implementation(Dependencies.Huawei.arEngine)
 
     androidTestImplementation(TestDependencies.AndroidX.runner)
     androidTestImplementation(TestDependencies.AndroidX.rules)
