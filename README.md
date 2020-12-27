@@ -2,11 +2,11 @@
 
 <img src="art/AR-MacOs.jpg"/>
 
-This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>, re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
+This is an optimized repository AREngine Huawei SDK. It's re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
 
 ## Getting Started
 
-1. Clone either this repository or the <b>Windows</b> one, in order to get the main structure and samples.
+1. Clone this repository, in order to get the main structure and samples.
 2. Click on ```Sync Project with Gradle Files``` and ```Make Project``` buttons on Android Studio, to get the dependencies and project ready.
 3. Use the different examples in the fragment package (<b>app</b> module) as a guide.
 
@@ -19,7 +19,6 @@ This is an optimized repository AREngine Huawei SDK. Suitable for <b>Mac OS</b>,
 * **presentation** - Android module that contains the VMs used in the app.
 * **arEngineCommon** - Java module that contains the AREngine common classes.
 * **rendering** - Java module that contains the basic classes that manage the render mechanism.
-* **arSdk** - Contains the artifact aar 'HUAWEI_AR_SDK_vX.XX.XX' with all of the AR capabilities.
 
 ## Samples
 

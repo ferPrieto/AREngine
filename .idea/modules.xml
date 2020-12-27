@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine.HUAWEI_AR_SDK_v2.10.0.iml" filepath="$PROJECT_DIR$/.idea/modules/HUAWEI_AR_SDK_v2.10.0/AREngine.HUAWEI_AR_SDK_v2.10.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AREngine.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AREngine.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/arengine-common/AREngine.arengine-common.iml" filepath="$PROJECT_DIR$/.idea/modules/arengine-common/AREngine.arengine-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AREngine.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/AREngine.buildSrc.iml" />
