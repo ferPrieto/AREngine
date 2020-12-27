@@ -1,8 +1,8 @@
 [![Platform](https://img.shields.io/badge/platform-android-brightgreen)](https://developer.android.com/reference)
 
-<img src="art/AR-MacOs.jpg"/>
+<img src="art/AR-Banner.jpg"/>
 
-This is an optimized repository AREngine Huawei SDK. It's re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
+This is an optimized repository AREngine Huawei SDK. It's been re-written in Kotlin and modularised, in order to abstract common AR, image rendering and architecture classes.
 
 ## Getting Started
 
