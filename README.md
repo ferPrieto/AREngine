@@ -1,4 +1,5 @@
 [![Platform](https://img.shields.io/badge/platform-android-brightgreen)](https://developer.android.com/reference)
+[![Build Status](https://app.bitrise.io/app/b56fa500b05ac241/status.svg?token=hvMbW5hyYuqrD5MSp89_jw&branch=ArEngine-MacOS)](https://app.bitrise.io/app/hvMbW5hyYuqrD5MSp89_jw)
 
 <img src="art/AR-Banner.jpg"/>
 
@@ -38,7 +39,7 @@ There are four examples that could be used as start point:
 
 #  License
 
-    Copyright 2020 Fernando Prieto Moyano
+    Copyright 2021 Fernando Prieto Moyano
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
