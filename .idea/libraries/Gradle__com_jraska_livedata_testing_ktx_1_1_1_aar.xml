@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.jraska.livedata:testing-ktx:1.1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c203e29e99770d4a03267acbbbf9db42/jetified-testing-ktx-1.1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c203e29e99770d4a03267acbbbf9db42/jetified-testing-ktx-1.1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c203e29e99770d4a03267acbbbf9db42/jetified-testing-ktx-1.1.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/129da193dba2ece94d237854a3cf63ba/jetified-testing-ktx-1.1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e52747d4bb9131d05f0203e6ee21ba8/jetified-testing-ktx-1.1.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e52747d4bb9131d05f0203e6ee21ba8/jetified-testing-ktx-1.1.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e52747d4bb9131d05f0203e6ee21ba8/jetified-testing-ktx-1.1.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab7fdd087ea0186f36d551efdc22d1a4/jetified-testing-ktx-1.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab7fdd087ea0186f36d551efdc22d1a4/jetified-testing-ktx-1.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab7fdd087ea0186f36d551efdc22d1a4/jetified-testing-ktx-1.1.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

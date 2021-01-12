@@ -6,4 +6,5 @@ plugins {
 dependencies {
     implementation(project(ProjectModules.arEngineCommon))
     implementation(Dependencies.Rendering.javaGlObject)
+    implementation(Dependencies.Huawei.arEngine)
 }

@@ -1,10 +1,10 @@
 buildscript {
-    val kotlin_version by extra("1.3.72")
+    val kotlin_version by extra("1.4.10")
     repositories {
         google()
         jcenter()
         maven {
-            url = uri("https://developer.huawei.com/repo/")
+            url = uri("http://developer.huawei.com/repo/")
         }
     }
     dependencies {
@@ -21,7 +21,7 @@ allprojects {
         google()
         jcenter()
         maven {
-            url = uri("https://developer.huawei.com/repo/")
+            url = uri("http://developer.huawei.com/repo/")
         }
     }
 }
