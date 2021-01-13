@@ -35,7 +35,7 @@ object Versions {
     const val coreTesting = "1.1.1"
     const val hilt = "2.28-alpha"
     const val javaGlObj = "0.3.0"
-    const val arEngineSdk = "2.13.0.2"
+    const val arEngineSdk = "2.15.0.1"
 }
 
 object BuildDependencies {
